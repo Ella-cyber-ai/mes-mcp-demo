@@ -1,4 +1,4 @@
 mcp
 streamlit
-google-generativeai
+groq
 python-dotenv
