@@ -23,10 +23,10 @@ def get_production(work_date: str = "", line_name: str = "") -> str:
     query = "SELECT * FROM production_result WHERE 1=1"
     params = []
 
-    if work_date:
+    if work_date and work_date.strip() and work_date != "null" and work_date != "None":
         query += " AND work_date = ?"
         params.append(work_date)
-    if line_name:
+    if line_name and line_name.strip() and line_name != "null" and line_name != "None":
         query += " AND line_name = ?"
         params.append(line_name)
 

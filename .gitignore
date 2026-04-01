@@ -2,7 +2,6 @@ venv/
 .env
 __pycache__/
 *.pyc
-*.db
 doc/
 Gemini API Key.txt
 groq API Key.txt
