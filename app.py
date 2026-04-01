@@ -8,7 +8,10 @@ import json
 
 # 환경변수 로드
 load_dotenv(override=True)
-api_key = os.getenv("GROQ_API_KEY") or st.secrets.get("GROQ_API_KEY")
+try:
+    api_key = st.secrets["GROQ_API_KEY"]
+except:
+    api_key = os.getenv("GROQ_API_KEY")
 client = Groq(api_key=api_key)
 
 # MCP Tool 불러오기
