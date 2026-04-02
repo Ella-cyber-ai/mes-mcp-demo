@@ -116,6 +116,15 @@ st.set_page_config(
 
 st.markdown("""
 <style>
+            .stButton > button {
+        background-color: transparent !important;
+        color: #94a3b8 !important;
+        border: 1px solid #e2e8f0 !important;
+        font-size: 11px !important;
+        padding: 2px 8px !important;
+        height: auto !important;
+    }
+            
     /* 입력창 높이 크게 */
     .stChatInput textarea {
         min-height: 100px !important;
