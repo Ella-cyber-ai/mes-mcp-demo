@@ -149,6 +149,23 @@ if "messages" not in st.session_state:
 if "quick_input" not in st.session_state:
     st.session_state.quick_input = None
 
+# 채팅 히스토리 출력 (먼저)
+for msg in st.session_state.messages:
+    with st.chat_message(msg["role"]):
+        st.markdown(msg["content"])
+
+# 입력창 (두 번째)
+if prompt := st.chat_input("예: 이번달 B라인 불량률 분석해줘"):
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    with st.chat_message("user"):
+        st.markdown(prompt)
+    with st.chat_message("assistant"):
+        with st.spinner("분석 중..."):
+            response = chat_with_mes(prompt)
+        st.markdown(response)
+    st.session_state.messages.append({"role": "assistant", "content": response})
+    st.rerun()
+
 # 빠른 질문 (접이식)
 with st.expander("💡 빠른 질문 보기"):
     quick_questions = [
@@ -161,7 +178,7 @@ with st.expander("💡 빠른 질문 보기"):
     for i, (label, question) in enumerate(quick_questions):
         if cols[i].button(label, key=f"qbtn_{i}", use_container_width=True):
             st.session_state.quick_input = question
-            
+
 # 빠른 질문 처리
 if st.session_state.quick_input:
     prompt = st.session_state.quick_input
