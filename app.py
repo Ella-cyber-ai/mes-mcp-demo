@@ -114,6 +114,21 @@ st.set_page_config(
     layout="centered"
 )
 
+st.markdown("""
+<style>
+    /* 입력창 높이 크게 */
+    .stChatInput textarea {
+        min-height: 100px !important;
+        font-size: 15px !important;
+    }
+    /* 채팅 영역 상단 여백 */
+    .block-container {
+        padding-top: 2rem !important;
+        max-width: 800px !important;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 st.title("🏭 MES AI 어시스턴트")
 st.caption("MCP 기반 스마트 제조 데이터 조회 · Powered by Groq")
 
