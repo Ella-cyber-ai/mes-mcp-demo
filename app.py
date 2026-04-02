@@ -40,8 +40,8 @@ groq_tools = [
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "work_date": {"type": "string", "description": "날짜 (YYYY-MM-DD)"},
-                    "line_name": {"type": "string", "description": "라인명 (A라인, B라인, C라인)"}
+                    "work_date": {"type": "string", "description": "날짜 (YYYY-MM-DD). 오늘 전체 조회 시 오늘 날짜 입력"},
+                    "line_name": {"type": "string", "description": "라인명 (A라인, B라인, C라인). 전체 조회 시 생략"}
                 }
             }
         }
@@ -214,7 +214,7 @@ if st.session_state.quick_input:
     with st.chat_message("assistant"):
         with st.spinner("분석 중..."):
             response = chat_with_mes(prompt)
-        st.write(response)
+        st.markdown(response)
     st.session_state.messages.append({"role": "assistant", "content": response})
     st.rerun()
 
@@ -226,6 +226,6 @@ if prompt := st.chat_input("예: 이번달 B라인 불량률 분석해줘"):
     with st.chat_message("assistant"):
         with st.spinner("분석 중..."):
             response = chat_with_mes(prompt)
-        st.write(response)
+        st.markdown(response)
     st.session_state.messages.append({"role": "assistant", "content": response})
     st.rerun()
