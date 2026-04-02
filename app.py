@@ -116,7 +116,7 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-            .stButton > button {
+    .stButton > button {
         background-color: transparent !important;
         color: #94a3b8 !important;
         border: 1px solid #e2e8f0 !important;
