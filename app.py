@@ -150,7 +150,7 @@ if "quick_input" not in st.session_state:
     st.session_state.quick_input = None
 
 # 빠른 질문 버튼
-st.markdown("**빠른 질문**")
+with st.expander("💡 빠른 질문 보기"):
 cols = st.columns(4)
 quick_questions = [
     ("📊 불량률 분석", "이번달 불량률 높은 라인 순서로 보여줘"),
