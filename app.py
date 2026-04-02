@@ -120,14 +120,11 @@ st.markdown("""
     .stChatInput textarea {
         min-height: 100px !important;
         font-size: 15px !important;
-        border: 2px solid #cbd5e1 !important;
-        border-radius: 8px !important;
     }
     /* 채팅 영역 상단 여백 */
     .block-container {
         padding-top: 2rem !important;
         max-width: 800px !important;
-        margin: 0 auto !important;
     }
 </style>
 """, unsafe_allow_html=True)
