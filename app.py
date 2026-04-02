@@ -129,8 +129,6 @@ st.markdown("""
     .stChatInput textarea {
         min-height: 100px !important;
         font-size: 15px !important;
-        border: 3px solid #000;   /* 굵은 실선 */
-        background-color: #f5f5f5; /* 배경색 */
     }
     /* 채팅 영역 상단 여백 */
     .block-container {
