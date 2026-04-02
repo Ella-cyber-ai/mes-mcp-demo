@@ -47,7 +47,8 @@ def get_production(work_date: str = "", line_name: str = "") -> str:
 # ── Tool 2: 불량률 분석 ────────────────────
 
 @mcp.tool()
-def get_defect_analysis(year_month: str = None, line_name: str = None) -> str:
+@mcp.tool()
+def get_defect_analysis(year_month: str = "", line_name: str = "") -> str:
     """불량률을 분석합니다. year_month: 연월(YYYY-MM), line_name: 라인명"""
     conn = get_db()
     cur = conn.cursor()
@@ -63,10 +64,10 @@ def get_defect_analysis(year_month: str = None, line_name: str = None) -> str:
     """
     params = []
 
-    if year_month:
+    if year_month and year_month.strip() and year_month not in ("null", "None", ""):
         query += " AND work_date LIKE ?"
         params.append(f"{year_month}%")
-    if line_name:
+    if line_name and line_name.strip() and line_name not in ("null", "None", ""):
         query += " AND line_name = ?"
         params.append(line_name)
 
