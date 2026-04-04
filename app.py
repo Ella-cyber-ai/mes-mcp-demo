@@ -150,14 +150,14 @@ if "quick_input" not in st.session_state:
     st.session_state.quick_input = None
 
 # 빠른 질문 버튼
-st.markdown("**빠른 질문**")
-cols = st.columns(4)
-quick_questions = [
-    ("📊 불량 분석", "B라인 불량 원인 TOP 3 알려줘"),
-    ("🔍 설비 현황", "이번달 비가동 원인 중 가장 많은 건 뭐야?"),
-    ("🏭 생산량 조회", "이번달 전체 라인 생산 달성률 보여줘"),
-    ("📋 일일 보고서", "2026-03-30 일일 보고서 작성해줘"),
-]
+#st.markdown("**빠른 질문**")
+#cols = st.columns(4)
+#quick_questions = [
+#    ("📊 불량 분석", "B라인 불량 원인 TOP 3 알려줘"),
+#    ("🔍 설비 현황", "이번달 비가동 원인 중 가장 많은 건 뭐야?"),
+#    ("🏭 생산량 조회", "이번달 전체 라인 생산 달성률 보여줘"),
+#    ("📋 일일 보고서", "2026-03-30 일일 보고서 작성해줘"),
+#]
 for i, (label, question) in enumerate(quick_questions):
     if cols[i].button(label, key=f"qbtn_{i}", use_container_width=True):
         st.session_state.quick_input = question
