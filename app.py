@@ -158,9 +158,9 @@ if "quick_input" not in st.session_state:
 #    ("🏭 생산량 조회", "이번달 전체 라인 생산 달성률 보여줘"),
 #    ("📋 일일 보고서", "2026-03-30 일일 보고서 작성해줘"),
 #]
-for i, (label, question) in enumerate(quick_questions):
-    if cols[i].button(label, key=f"qbtn_{i}", use_container_width=True):
-        st.session_state.quick_input = question
+#for i, (label, question) in enumerate(quick_questions):
+#    if cols[i].button(label, key=f"qbtn_{i}", use_container_width=True):
+#        st.session_state.quick_input = question
 
 # 채팅 히스토리 출력
 for msg in st.session_state.messages:
