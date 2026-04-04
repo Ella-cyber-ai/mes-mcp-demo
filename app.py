@@ -104,8 +104,6 @@ Tool 결과를 마크다운 표 형식으로 정리해 주세요.
             )
         return response.choices[0].message.content
     except Exception as e:
-        if "429" in err or "rate_limit" in err or "quota" in err.lower():
-            return "⚠️ 현재 서비스 사용량 한도에 도달했습니다.\n잠시 후 다시 시도해 주세요. (보통 수십 분 후 초기화됩니다)"
         return f"오류: {str(e)}"
 
 # ── UI ──────────────────────────────────────────
